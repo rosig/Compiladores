@@ -1,0 +1,26 @@
+
+
+----> Descrição do que foi feito e o que faltou <----
+
+O print foi feito de acordo com a otimização 02; clang -S -emit-llvm -O2 test.c
+
+[Feito]
+- O código identifica e diferencia uma declaração de variável
+  como global ou local.
+- As declarações globais, que podem ou não atribuir um valor à
+  uma variável declarada, são devidamente diferenciadas e
+  printadas no llvm.
+- As declarações de funções são devidamente identificadas e 
+  seus atributos são perfeitamente representados em llvm.
+- O retorno das funções também são diferenciados de void ou
+  outro valor.
+- A função @aqua_baldo(), que não apresenta argumentos, foi
+  a única que foi feita por completo, onde suas variáveis e o retorno
+  foram perfeitamente calculados.
+
+[Faltou]
+- As funções que apresentam argumentos não estão completas, pois
+  tive dificuldades para utilizar os parâmetros com registradores.
+  Elas apresentam basicamente só a declaração e o retorno.
+- Não está implementado o gerenciamente dos registradores dentro
+  de uma função.
